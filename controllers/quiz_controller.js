@@ -187,3 +187,16 @@ exports.check = function (req, res, next) {
         answer: answer
     });
 };
+
+// GET /quizzes/randomplay
+exports.jugar = function (req, res, next) {
+
+	var score = req.session.score || 0;
+	var preguntas = req.session.preguntas || [];
+
+	  res.render('quizzes/random_play', {
+                quiz: quiz,
+                score: req.session.score
+            });
+
+};
